@@ -1,0 +1,43 @@
+{
+  "name": "dioxia.github.io",
+  "author": "dioxia",
+  "homepage": ".",
+  "description": "Homepage",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-scripts": "5.0.1"
+  },
+  "scripts": {
+    "clean": "rm -rf build",
+    "deploy": "gh-pages -b gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "yarn clean && react-scripts build",
+    "lint": "prettier -w .",
+    "predeploy": "yarn build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "keywords": [
+    "react",
+    "homepage"
+  ]
+}

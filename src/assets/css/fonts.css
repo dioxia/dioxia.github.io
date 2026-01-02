@@ -1,0 +1,23 @@
+/**
+ *
+ * src/assets/css/fonts.css
+ *
+ */
+
+@font-face {
+  font-family: "Ubuntu Mono";
+  src: url("../fonts/ubuntu-mono.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Cafe";
+  src: url("../fonts/cafe.ttf") format("truetype");
+}
+
+.ubuntu-mono {
+  font-family: "Ubuntu Mono";
+}
+
+.cafe {
+  font-family: "Cafe";
+}
