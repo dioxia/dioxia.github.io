@@ -1,17 +1,17 @@
 /**
- * 
+ *
  * src/index.js
- * 
+ *
  */
 
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './assets/css/index.css';
-import Main from './Main';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./assets/css/index.css";
+import Main from "./app/main/Main";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Main />
-  </React.StrictMode>
+  </React.StrictMode>,
 );

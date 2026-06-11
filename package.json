@@ -2,8 +2,8 @@
   "name": "dioxia.github.io",
   "author": "dioxia",
   "homepage": ".",
-  "description": "Homepage",
-  "version": "0.1.0",
+  "description": "dioxia.github.io",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "react": "^19.2.3",
@@ -38,6 +38,7 @@
   },
   "keywords": [
     "react",
-    "homepage"
+    "homepage",
+    "dioxia.github.io"
   ]
 }

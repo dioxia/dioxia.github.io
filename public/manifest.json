@@ -1,6 +1,6 @@
 {
-  "short_name": "create-react-app",
-  "name": "create-react-app",
+  "short_name": "react-app",
+  "name": "react-app",
   "icons": [
     {
       "src": "icon.svg",
