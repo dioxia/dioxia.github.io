@@ -3,3 +3,11 @@
  * src/assets/css/footer.css
  *
  */
+
+.footer-bg {
+  background-color: black;
+}
+
+.footer-link {
+  text-decoration: none;
+}

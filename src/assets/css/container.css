@@ -3,3 +3,7 @@
  * src/assets/css/container.css
  *
  */
+
+.footer-container {
+  max-height: 25%;
+}

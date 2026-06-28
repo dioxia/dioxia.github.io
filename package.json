@@ -1,22 +1,23 @@
 {
   "name": "dioxia.github.io",
   "author": "dioxia",
-  "homepage": ".",
   "description": "dioxia.github.io",
+  "homepage": ".",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "ollama": "^0.6.3",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-scripts": "5.0.1"
   },
   "scripts": {
+    "build": "yarn clean && react-scripts build",
     "clean": "rm -rf build",
     "deploy": "gh-pages -b gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "yarn clean && react-scripts build",
-    "lint": "prettier -w .",
-    "predeploy": "yarn build"
+    "lint": "yarn clean && prettier -w .",
+    "predeploy": "yarn build",
+    "start": "react-scripts start"
   },
   "eslintConfig": {
     "extends": [
@@ -40,5 +41,9 @@
     "react",
     "homepage",
     "dioxia.github.io"
-  ]
+  ],
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "prettier": "^3.9.1"
+  }
 }

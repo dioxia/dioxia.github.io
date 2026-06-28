@@ -1,0 +1,324 @@
+Create a card component in the centre of the page, for an ollama chat web-app.
+tailwindcss is imported into the public/index.html, for styling.
+The card should include an ollama connection indicator.
+
+================================================================
+FILE: src/app/footer/Footer.js
+================================================================
+
+/**
+ *
+ * src/app/footer/Footer.js
+ *
+ */
+
+import React from "react";
+
+// import "../../assets/css/footer.css";
+
+import icon from "../../assets/img/icon.svg";
+
+const Footer = () => {
+  return (
+    <footer className="fixed flex bg-black left-0 right-0 bottom-0 p-4">
+      <a href="/" className="decoration-none">
+        <img src={icon} alt="footer-icon" className="w-8 h-8" />
+      </a>
+    </footer>
+  );
+}
+
+export default Footer;
+
+
+================================================================
+FILE: src/app/main/Main.js
+================================================================
+
+/**
+ *
+ * src/app/main/Main.js
+ *
+ */
+
+import React from "react";
+
+import Navbar from "../navbar/Navbar";
+import Footer from "../footer/Footer";
+
+const Main = () => {
+  return (
+    <main>
+      <Navbar />
+        <div>Main</div>
+      <Footer />
+    </main>
+  );
+};
+
+export default Main;
+
+
+================================================================
+FILE: src/app/navbar/Navbar.js
+================================================================
+
+/**
+ *
+ * src/app/navbar/Navbar.js
+ *
+ */
+
+import React from "react";
+
+// import "../../assets/css/navbar.css";
+
+import icon from "../../assets/img/icon.svg";
+
+const Navbar = () => {
+  return (
+    <nav className="fixed flex bg-black left-0 right-0 top-0 p-4">
+      <a href="/" className="decoration-none">
+        <img src={icon} alt="navbar-icon" className="w-8 h-8" />
+      </a>
+    </nav>
+  );
+};
+
+export default Navbar;
+
+
+================================================================
+FILE: src/assets/css/badge.css
+================================================================
+
+/**
+ *
+ * src/assets/css/badge.css
+ *
+ */
+
+
+================================================================
+FILE: src/assets/css/button.css
+================================================================
+
+/**
+ *
+ * src/assets/css/button.css
+ *
+ */
+
+
+================================================================
+FILE: src/assets/css/card.css
+================================================================
+
+/**
+ *
+ * src/assets/css/card.css
+ *
+ */
+
+
+================================================================
+FILE: src/assets/css/color.css
+================================================================
+
+/**
+ *
+ * src/assets/css/color.css
+ *
+ */
+
+
+================================================================
+FILE: src/assets/css/container.css
+================================================================
+
+/**
+ *
+ * src/assets/css/container.css
+ *
+ */
+
+.footer-container {
+  max-height: 25%;
+}
+
+
+================================================================
+FILE: src/assets/css/font.css
+================================================================
+
+/**
+ *
+ * src/assets/css/fonts.css
+ *
+ */
+
+@font-face {
+  font-family: "Ubuntu Mono";
+  src: url("../fonts/ubuntu-mono.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Cafe";
+  src: url("../fonts/cafe.ttf") format("truetype");
+}
+
+.ubuntu-mono {
+  font-family: "Ubuntu Mono";
+}
+
+.cafe {
+  font-family: "Cafe";
+}
+
+
+================================================================
+FILE: src/assets/css/footer.css
+================================================================
+
+/**
+ *
+ * src/assets/css/footer.css
+ *
+ */
+
+.footer-bg {
+  background-color: black;
+}
+
+.footer-link {
+  text-decoration: none;
+}
+
+
+================================================================
+FILE: src/assets/css/global.css
+================================================================
+
+/**
+ *
+ * src/assets/css/global.css
+ *
+ */
+
+
+================================================================
+FILE: src/assets/css/header.css
+================================================================
+
+/**
+ *
+ * src/assets/css/header.css
+ *
+ */
+
+
+================================================================
+FILE: src/assets/css/index.css
+================================================================
+
+/**
+ *
+ * src/assets/css/index.css
+ *
+ */
+
+@import "badge.css";
+@import "button.css";
+@import "card.css";
+@import "color.css";
+@import "container.css";
+@import "font.css";
+@import "footer.css";
+@import "global.css";
+@import "header.css";
+@import "info.css";
+@import "menu.css";
+@import "theme.css";
+
+
+================================================================
+FILE: src/assets/css/info.css
+================================================================
+
+/**
+ *
+ * src/assets/css/info.css
+ *
+ */
+
+
+================================================================
+FILE: src/assets/css/menu.css
+================================================================
+
+/**
+ *
+ * src/assets/css/menu.css
+ *
+ */
+
+
+================================================================
+FILE: src/assets/css/navbar.css
+================================================================
+
+/**
+ *
+ * src/assets/css/navbar.css
+ *
+ */
+
+
+
+================================================================
+FILE: src/assets/css/theme.css
+================================================================
+
+/**
+ *
+ * src/assets/css/theme.css
+ *
+ */
+
+
+================================================================
+FILE: src/index.js
+================================================================
+
+/**
+ *
+ * src/index.js
+ *
+ */
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./assets/css/index.css";
+import Main from "./app/main/Main";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <Main />
+  </React.StrictMode>,
+);
+
+
+================================================================
+FILE: src/utils/index.js
+================================================================
+
+/**
+ *
+ * src/utils/index.js
+ *
+ */
+
+import ollama from "ollama";
+
+
