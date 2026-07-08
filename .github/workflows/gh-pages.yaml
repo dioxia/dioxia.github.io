@@ -1,0 +1,82 @@
+#
+# gh-pages.yaml
+#
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: yarn
+
+      - name: Install & upgrade system packages
+        run: |
+          sudo apt-get update \
+          yes | sudo apt dist-upgrade -y
+          sudo apt-get install -y \
+            make \
+            cmake \
+            automake \
+            python3 \
+            python3-pip \
+            python3-venv \
+            curl \
+            wget
+
+      - name: Install global npm packages
+        run: |
+          npm install -g yarn prettier
+
+      - name: Install project dependencies
+        run: |
+          echo "Installing project dependencies..."
+          yarn install
+
+      - name: Build project
+        run: |
+          echo "Building project..."
+          yarn build
+
+      - name: Deploy
+        run: |
+          echo "Deploying project to gh-pages..."
+          yarn deploy
+
+      - name: Show build output
+        run: |
+          echo ""
+          echo "Repository:"
+          pwd
+
+          echo ""
+          echo "Files:"
+          ls -lah
+          echo ""
+
+          echo ""
+          echo "Build directory:"
+          ls -lah build || true
+          echo ""
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: website
+          path: |
+            build
