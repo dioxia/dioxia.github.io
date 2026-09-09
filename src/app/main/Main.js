@@ -4,25 +4,22 @@
  *
  */
 
-import React from "react";
+import React, { useState } from "react";
 
+import Grid from "../grid/Grid";
 import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
-import Card from "../card/Card";
 
 const Main = () => {
+  const [balance, setBalance] = useState(1000.0);
+
   return (
-    <main className="min-h-screen bg-zinc-950">
-      <Navbar />
-
-      <section className="flex justify-center items-center min-h-screen px-8 pt-20 pb-20">
-        <Card />
-      </section>
-
+    <>
+      <Navbar balance={balance} setBalance={setBalance} />
+      <Grid balance={balance} setBalance={setBalance} />
       <Footer />
-    </main>
+    </>
   );
 };
 
 export default Main;
-

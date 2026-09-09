@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-OUTPUT="chatgpt-code.txt"
+OUTPUT="code.txt"
 
 # Start with an empty file.
 : > "$OUTPUT"
@@ -21,6 +21,7 @@ find . \
   \) -prune -o \
   -type f \( \
     -iname "*.js" -o \
+    -iname "*.html" -o \
     -iname "*.css" \
   \) -print0 |
 sort -z |
@@ -38,5 +39,3 @@ done
 
 echo "Done!"
 echo "Output written to: $(pwd)/$OUTPUT"
-
-

@@ -28,7 +28,7 @@ jobs:
       - name: Install & upgrade system packages
         run: |
           sudo apt-get update \
-          yes | sudo apt dist-upgrade -y
+          sudo apt dist-upgrade -y
           sudo apt-get install -y \
             make \
             cmake \

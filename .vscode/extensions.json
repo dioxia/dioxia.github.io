@@ -1,3 +1,15 @@
 {
-  "recommendations": ["sleistner.vscode-fileutils"]
+  "recommendations": [
+    "sleistner.vscode-fileutils",
+    "naumovs.color-highlight",
+    "SanjulaGanepola.github-local-actions",
+    "UgandaChristianUniversity.kashuapagetemplate",
+    "christian-kohler.path-intellisense",
+    "csstools.postcss",
+    "esbenp.prettier-vscode",
+    "foxundermoon.shell-format",
+    "timonwong.shellcheck",
+    "1000ch.svgo",
+    "bradlc.vscode-tailwindcss"
+  ]
 }
