@@ -2,73 +2,38 @@
 # gh-pages.yaml
 #
 
-name: Deploy to GitHub Pages
+name: Build and Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - master #
-  workflow_dispatch:
+      - master # 
 
 permissions:
   contents: write
 
 jobs:
-  deploy:
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: lts/*
-          cache: yarn
+          node-version: 20
+          cache: 'yarn'
 
-      - name: Install project dependencies
-        run: |
-          echo "Installing project dependencies..."
-          yarn install
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
 
       - name: Build project
-        run: |
-          echo "Building project..."
-          yarn build
+        run: yarn build
 
-      - name: Configure Git identity
-        env:
-          COMMIT_NAME: ${{ secrets.COMMIT_NAME }}
-          COMMIT_EMAIL: ${{ secrets.COMMIT_EMAIL }}
-        run: |
-          git config --global user.name "$COMMIT_NAME"
-          git config --global user.email "$COMMIT_EMAIL"
-          
-      - name: Deploy
-        run: |
-          echo "Deploying project to gh-pages..."
-          yarn deploy
-
-      - name: Show build output
-        run: |
-          echo ""
-          echo "Repository:"
-          pwd
-
-          echo ""
-          echo "Files:"
-          ls -lah
-          echo ""
-
-          echo ""
-          echo "Build directory:"
-          ls -lah build || true
-          echo ""
-
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
+      - name: Deploy to gh-pages
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          name: website
-          path: |
-            build
+          folder: build #
+          branch: gh-pages
