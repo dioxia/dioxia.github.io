@@ -25,23 +25,23 @@ jobs:
           node-version: lts/*
           cache: yarn
 
-      - name: Install & upgrade system packages
-        run: |
-          sudo apt-get update \
-          sudo apt dist-upgrade -y
-          sudo apt-get install -y \
-            make \
-            cmake \
-            automake \
-            python3 \
-            python3-pip \
-            python3-venv \
-            curl \
-            wget
+      # - name: Install & upgrade system packages
+      #  run: |
+      #    sudo apt-get update \
+      #    sudo apt dist-upgrade -y
+      #    sudo apt-get install -y \
+      #      make \
+      #      cmake \
+      #      automake \
+      #      python3 \
+      #      python3-pip \
+      #      python3-venv \
+      #      curl \
+      #      wget
 
-      - name: Install global npm packages
-        run: |
-          npm install -g yarn prettier
+      # - name: Install global npm packages
+      #  run: |
+      #    npm install -g yarn prettier
 
       - name: Install project dependencies
         run: |
