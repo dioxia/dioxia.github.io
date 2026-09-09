@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "./static/css/main.af98732b.css",
+    "main.js": "./static/js/main.d43e0ffa.js",
+    "static/media/ubuntu-mono.ttf": "./static/media/ubuntu-mono.9fa7d55c51063608f793.ttf",
+    "static/media/cafe.ttf": "./static/media/cafe.e9c5e3c8447ff5db3df5.ttf",
+    "static/media/icon.svg": "./static/media/icon.4bd32a240ec752b3f3c20599134a478e.svg",
+    "index.html": "./index.html",
+    "main.af98732b.css.map": "./static/css/main.af98732b.css.map",
+    "main.d43e0ffa.js.map": "./static/js/main.d43e0ffa.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.af98732b.css",
+    "static/js/main.d43e0ffa.js"
+  ]
+}
