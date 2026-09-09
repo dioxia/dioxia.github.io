@@ -6,6 +6,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
+    branches:
+      - master #
   workflow_dispatch:
 
 permissions:
@@ -25,27 +27,6 @@ jobs:
           node-version: lts/*
           cache: yarn
 
-      # - name: Install & upgrade system packages
-      #  run: |
-      #    sudo apt-get update \
-      #    sudo apt dist-upgrade -y
-      #    sudo apt-get install -y \
-      #      make \
-      #      cmake \
-      #      automake \
-      #      python3 \
-      #      python3-pip \
-      #      python3-venv \
-      #      curl \
-      #      wget
-
-      # - name: Install global npm packages
-      #  run: |
-      #    npm install -g yarn prettier
-
-      # - name:
-      #  run: |
-
       - name: Install project dependencies
         run: |
           echo "Installing project dependencies..."
@@ -55,6 +36,11 @@ jobs:
         run: |
           echo "Building project..."
           yarn build
+
+      - name: Configure Git identity
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Deploy
         run: |
