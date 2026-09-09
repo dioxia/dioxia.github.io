@@ -38,10 +38,13 @@ jobs:
           yarn build
 
       - name: Configure Git identity
+        env:
+          COMMIT_NAME: ${{ secrets.COMMIT_NAME }}
+          COMMIT_EMAIL: ${{ secrets.COMMIT_EMAIL }}
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
+          git config --global user.name "$COMMIT_NAME"
+          git config --global user.email "$COMMIT_EMAIL"
+          
       - name: Deploy
         run: |
           echo "Deploying project to gh-pages..."
